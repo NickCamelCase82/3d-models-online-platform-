@@ -3,6 +3,8 @@ const { PORT } = process.env;
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
+
+const mainRouter = require('./routes/main');
 // Импортируем созданный в отдельный файлах рутеры.
 const app = express();
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
@@ -17,6 +19,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
+
+// routes
+app.use('/', mainRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
