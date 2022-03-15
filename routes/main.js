@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  res.render('entries/main');
+  res.render('entries/listing');
 });
 
 module.exports = router;
