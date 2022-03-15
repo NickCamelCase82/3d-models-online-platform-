@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  },
+  "name": "3dstockunicorn",
+  "description": "Площадка позволяет криэйторам (художники, которые делают 3Д модели) продавать свои работы, а так же зарабатывать на том что их работы печатают мэйкеры (люди у которых есть 3Д принтеры и они могут напечатать 3Д модели).",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js --ignore sessions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonAtnagulov/3dStockUnicorn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonAtnagulov/3dStockUnicorn/issues"
+  },
+  "homepage": "https://github.com/AntonAtnagulov/3dStockUnicorn#readme"
+}
