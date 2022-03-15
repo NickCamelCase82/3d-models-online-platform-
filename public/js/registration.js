@@ -19,5 +19,11 @@ form.addEventListener('submit', async (event) => {
     }),
   });
   const registrationResponse = await response.json();
-  console.log(registrationResponse);
+  if (registrationResponse.hasOwnProperty('errors')) {
+    regName.placeholder = 'ОБЯЗАТЕЛЬНОЕ ПОЛЕ ДЛЯ ЗАПОЛНЕНИЯ';
+    regPassword.placeholder = 'ОБЯЗАТЕЛЬНОЕ ПОЛЕ ДЛЯ ЗАПОЛНЕНИЯ';
+    regMail.placeholder = 'ОБЯЗАТЕЛЬНОЕ ПОЛЕ ДЛЯ ЗАПОЛНЕНИЯ';
+  } else {
+    window.location.assign('/');
+  }
 });

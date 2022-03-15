@@ -13,9 +13,9 @@ router.post('/new', async (req, res) => {
     const addUser = await User.create({name, password: hashPassword, email});
     req.session.user = addUser.name;
     req.session.userId = addUser.id;
-    console.log('==============',req.session.userid);
     res.json(addUser);
   } catch (error) {
+    res.json(error);
     console.error(error);
   }
 });

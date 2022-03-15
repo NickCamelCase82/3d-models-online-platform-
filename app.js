@@ -8,8 +8,9 @@ const path = require('path');
 
 const hbs = require("hbs");
 const {sessionLogger, userName} = require('./middleware/sessionLogger');
-const registrationRouter = require('./routes/registration');
 const mainRouter = require('./routes/main');
+const registrationRouter = require('./routes/registration');
+const logoutRouter = require('./routes/logout');
 
 // Импортируем созданный в отдельный файлах рутеры.
 const app = express();
@@ -44,6 +45,7 @@ app.use(sessionLogger);
 
 app.use('/', mainRouter);
 app.use('/registration', registrationRouter);
+app.use('/logout', logoutRouter);
 
 
 app.listen(PORT, () => {
