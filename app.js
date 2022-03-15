@@ -5,9 +5,12 @@ const logger = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const path = require('path');
+
 const hbs = require("hbs");
 const {sessionLogger, userName} = require('./middleware/sessionLogger');
 const registrationRouter = require('./routes/registration');
+const mainRouter = require('./routes/main');
+
 // Импортируем созданный в отдельный файлах рутеры.
 const app = express();
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
@@ -23,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
 
+
 const sessionConfig = {
   store: new FileStore(),
   name: 'MyCookieName',
@@ -35,11 +39,13 @@ const sessionConfig = {
   },
 };
 app.use(session(sessionConfig));
-
 app.use(userName);
 app.use(sessionLogger);
 
+app.use('/', mainRouter);
 app.use('/registration', registrationRouter);
+
+
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
 });

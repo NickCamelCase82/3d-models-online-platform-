@@ -1,1 +1,31 @@
-console.log('main');
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#allCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#allCards .card {
+  margin: 1.2% 0.8%;
+  box-shadow: 10px 10px 10px black;
+}
+
+.card-body {
+  position: relative;
+}
+
+.card-body a {
+  position: absolute;
+  bottom: 6%;
+  left: 6%;
+}
+
+.card-text {
+  margin-bottom: 50px;
+}
