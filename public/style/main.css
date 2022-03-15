@@ -5,6 +5,16 @@
   overflow-x: hidden;
 }
 
+.my-5 {
+  margin: 30px 300px;
+}
+
+.btn-secondary {
+  background-color: #2D3748;
+  border-radius: 12px;
+  padding: 19px 55px;
+}
+
 #allCards {
   display: flex;
   justify-content: center;
@@ -13,11 +23,16 @@
 
 #allCards .card {
   margin: 1.2% 0.8%;
-  box-shadow: 10px 10px 10px black;
+  border: 0px;
+}
+
+.modelImg {
+  border-radius: 12px;
 }
 
 .card-body {
   position: relative;
+  margin-bottom: 50px;
 }
 
 .card-body a {
