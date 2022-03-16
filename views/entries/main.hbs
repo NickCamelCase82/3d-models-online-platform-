@@ -1,17 +1,18 @@
+<script src="./js/paganation.js"></script>
 <link rel="stylesheet" href="../style/main.css">
 
-  <div class="mainHeader">
-    <div class="mainContainer">
-      <h1 class="titleName">Unicorn Stock</h1>
-      <div class="description">Stock 3d models for board games</div>
-      {{#if user}}
-      <span>Привет {{user}}</span>
-      <a href="/logout"><button id="regButton" type="button" class="btn btn-outline-light">logout</button></a>
-      {{/if}}
-      {{#unless user}}
-      <a href="/registration"><button id="regButton" type="button" class="btn btn-outline-light">Register</button></a>
-      <a href="/login"><button id="regButton" type="button" class="btn btn-outline-light">Login</button></a>
-      {{/unless}}
+<div class="mainHeader">
+  <div class="mainContainer">
+    <h1 class="titleName">Unicorn Stock</h1>
+    <div class="description">Stock 3d models for board games</div>
+    {{#if user}}
+    <span>Привет {{user}}</span>
+    <a href="/logout"><button id="regButton" type="button" class="btn btn-outline-light">logout</button></a>
+    {{/if}}
+    {{#unless user}}
+    <a href="/registration"><button id="regButton" type="button" class="btn btn-outline-light">Register</button></a>
+    <a href="/login"><button id="regButton" type="button" class="btn btn-outline-light">Login</button></a>
+    {{/unless}}
   </div>
 </div>
 
@@ -19,79 +20,27 @@
   <div class="row my-4">
     <div class="col">
       <div id="allCards">
+        {{#each currNote}}
         <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
+          <img class="modelImg" src="{{this.modelImage}}" class="card-img-top" alt="3d mdel">
           <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <br />
+            <h4 class="price">{{this.price}} $</h4>
             <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
           </div>
         </div>
-
-        <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
-          <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
-            <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
-          <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
-            <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
-          <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
-            <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
-          <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
-            <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
-          <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
-            <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
-          <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
-            <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img class="modelImg" src="/image/2906292241.jpg" class="card-img-top" alt="3d mdel">
-          <div class="card-body">
-            <h5 class="card-title">Card title sfdgdf fdgsdsfgfdgd</h5>
-            <p class="card-text" style="padding-bottom: 30px;">Orks with guns</p>
-            <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
-          </div>
-        </div>
+        {{/each}}
       </div>
     </div>
+    <div class="pagination">
+      {{#each btnArr}}
+      <a class="paginationLink" href="{{this.href}}">{{this.name}}</a>
+      <br/>
+      {{/each}}
+    </div>
+
   </div>
 </div>
 
