@@ -17,9 +17,4 @@ router.post('/', upload.single('Photo-1'), (req, res, next) => {
   res.redirect('/');
 });
 
-router.get('/model', async (req, res) => {
-  const targetListings = await Listing.findAll({ where: { user_id: '1' }, raw: true });
-  res.render('upload/test', { targetListings });
-});
-
 module.exports = router;
