@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const { PORT } = process.env;
 const express = require('express');
 const logger = require('morgan');
@@ -6,8 +7,8 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const path = require('path');
 
-const hbs = require("hbs");
-const {sessionLogger, userName} = require('./middleware/sessionLogger');
+const hbs = require('hbs');
+const { sessionLogger, userName } = require('./middleware/sessionLogger');
 const mainRouter = require('./routes/main');
 const registrationRouter = require('./routes/registration');
 const logoutRouter = require('./routes/logout');
@@ -29,7 +30,6 @@ app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
 
-
 const sessionConfig = {
   store: new FileStore(),
   name: 'MyCookieName',
@@ -49,8 +49,7 @@ app.use('/', mainRouter);
 app.use('/registration', registrationRouter);
 app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
-app.use('/upload', uploadRouter)
-
+app.use('/upload', uploadRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
