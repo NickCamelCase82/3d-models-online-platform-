@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
-const { User } = require('../db/models/');
+const { User } = require('../db/models');
 
 router.get('/', (req, res) => {
   res.render('entries/login');
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     const { userName, userPassword } = req.body;
     const loginUser = await User.findOne({
       where: { name: userName },
-      raw: true
+      raw: true,
     });
     const passwordCheck = await bcrypt.compare(userPassword, loginUser.password);
     if (passwordCheck) {
