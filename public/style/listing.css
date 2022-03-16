@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap');
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .allborders {
   border: 1px solid black;
 }
@@ -107,20 +113,6 @@ line-height: 80%;
   color: #000;
   font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 900px) {
   #leftSide {
