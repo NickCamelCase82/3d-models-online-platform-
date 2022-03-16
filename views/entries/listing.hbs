@@ -1,3 +1,4 @@
+<script defer src="../js/listing.js"></script>
 <link rel="stylesheet" href="../style/listing.css">
 
 <div id="listingMain" class="row">
@@ -91,22 +92,3 @@
   </div>
 </div>
 
-
-<script>
-  const smallPics = document.getElementById('smallPics');
-  const bigPicImg = document.getElementById('bigPicImg');
-  
-  smallPics.addEventListener("mouseover", function( event ) {
-    if (event.target.tagName === 'IMG') {
-      console.log(event.target.src);
-      const rrc = event.target.src;
-      bigPicImg.src = rrc;
-    }
-  });
-  smallPics.addEventListener("mouseout", function( event ) {
-    if (event.target.tagName === 'IMG') {
-      console.log(event.target.alt);
-      bigPicImg.src = '../image/2.png';
-    }
-  });
-</script>

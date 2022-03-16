@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
   try {
     const { userName, userPassword } = req.body;
     const loginUser = await User.findOne({
@@ -17,6 +16,7 @@ router.post('/', async (req, res) => {
     const passwordCheck = await bcrypt.compare(userPassword, loginUser.password);
     if (passwordCheck) {
       req.session.user = loginUser.name;
+      req.session.userId = loginUser.id;
       res.redirect('/');
     }
   } catch (err) {
