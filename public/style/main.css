@@ -39,12 +39,6 @@
   margin-bottom: 50px;
 }
 
-.card-body a {
-  /* position: absolute; */
-  /* bottom: 6%;
-  left: 6%; */
-}
-
 .card-text {
   margin: 0px;
   padding: 0px;
@@ -59,7 +53,7 @@
 }
 
 .mainContainer {
-  padding-top: 10%;
+  padding-top: 5%;
   padding-bottom: 6%;
   display: flex;
   color: aliceblue;
@@ -79,7 +73,7 @@
 
 footer {
   background: rgb(19, 42, 68);
-  background: linear-gradient(13deg, rgba(19, 42, 68, 1) 31%, #2b5c79 100%);
+  background: linear-gradient(90deg, rgb(116, 116, 116) 31%, #cccccc 100%);
 }
 
 .footerBox {
@@ -98,4 +92,45 @@ footer {
 
 .paginationLink{
   padding: 0px 5px;
+}
+
+.iconBag {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.iconBag i {
+  margin: 40px 10px;
+  color:rgb(255, 255, 255)
+}
+
+.footerMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerBox i {
+  color: #1d3158;
+  margin-top: 35%;
+}
+
+.footerBox h6 {
+  font-weight: 400;
+  letter-spacing: -0.231818px;
+  background: linear-gradient(45deg, #0B2349 33%, #0D61BC 66%, #8AA9D6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footerEnd {
+  margin: 0% 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerLinks {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,9 +1,13 @@
 <link rel="stylesheet" href="../style/main.css">
 
 <div class="mainHeader">
+  <div class="iconBag">
+    <a href="#"><i class="fa-regular fa-user fa-2xl"></i></a>
+    <a href="#"><i class="fa-regular fa-heart fa-2xl"></i></a>
+    <a href="#"><i class="fa-solid fa-basket-shopping fa-2xl"></i></a>
+  </div>
   <div class="mainContainer">
-    <h1 class="titleName">Unicorn Stock</h1>
-    <div class="description">Stock 3d models for board games</div>
+    <h1 class="titleName">PRINT YOUR ADVENTURE</h1>
     {{#if user}}
     <span>Привет {{user}}</span>
     <a href="/logout"><button id="regButton" type="button" class="btn btn-outline-light">logout</button></a>
@@ -36,7 +40,7 @@
     <div class="pagination">
       {{#each btnArr}}
       <a class="paginationLink" href="{{this.href}}">{{this.name}}</a>
-      <br/>
+      <br />
       {{/each}}
     </div>
 
@@ -44,12 +48,26 @@
 </div>
 
 <footer>
+  <div class="footerMain">
+  <div class='FooterImgBlock'>
+    <img src="/image/left.png" width="300px">
+  </div>
   <div class="footerBox">
-    <a href="/"><button type="button" class="btn btn-outline-light" style="width: 200px; margin: 5px">About
-        us</button></a>
-    <a href="/"><button type="button" class="btn btn-outline-light" style="width: 200px; margin: 5px">To become
-        creater</button></a>
-    <a href="/"><button type="button" class="btn btn-outline-light" style="width: 200px; margin: 5px">To become
-        maker</button></a>
+    <h6>About us</h6>
+    <i class="fa-brands fa-facebook fa-lg"></i>
+    <i class="fa-brands fa-twitter-square fa-lg"></i>
+    <i class="fa-brands fa-telegram fa-lg"></i>
+    <i class="fa-brands fa-youtube-square fa-lg"></i>
+    <i class="fa-brands fa-discord fa-lg"></i>
+  </div>
+  </div>
+  <div class="footerEnd">
+    <p>Copyright © 2022. Galactic Miniatures. All rights reserved.</p>
+    <div class="footerLinks">
+      <a>Legal Inform</a>
+      <a>Cookies</a>
+      <a>Terms & Conditions</a>
+      <a>Privacy Policy</a>
+    </div>
   </div>
 </footer>
