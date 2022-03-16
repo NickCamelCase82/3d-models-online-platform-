@@ -1,4 +1,3 @@
-
 const form = document.querySelector('form');
 
 form.addEventListener('submit', async (event) => {
@@ -7,7 +6,7 @@ form.addEventListener('submit', async (event) => {
   const regPassword = event.target.userPassword;
   const regMail = event.target.email;
 
-  const response = await fetch(`/registration/new`, {
+  const response = await fetch('/registration/new', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
