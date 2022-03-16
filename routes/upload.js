@@ -8,9 +8,8 @@ router.get('/', (req, res) => {
   res.render('upload/uploadModel');
 });
 
-router.post('/', upload.single('Photo-1'), (req, res, next) => {
-  const { path } = req.file;
-  const newPath = path.slice(6);
+router.post('/', upload.array('Photo-1'), (req, res) => {
+  const newPath = req.files.map((elem) => elem.path.slice(7)).join(', ');
   const listing = Listing.create({
     name: req.body.name, description: req.body.description, price: req.body.price, sku: 'ABC', modelLink: 'link', modelImage: newPath, user_id: req.session.userId,
   });

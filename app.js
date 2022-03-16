@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 require('dotenv').config();
 
 const { PORT } = process.env;
@@ -15,6 +16,7 @@ const logoutRouter = require('./routes/logout');
 const loginRouter = require('./routes/login');
 const uploadRouter = require('./routes/upload');
 const paginationRouter = require('./routes/pagination');
+const listingRouter = require('./routes/listing');
 
 // Импортируем созданный в отдельный файлах рутеры.
 const app = express();
@@ -43,8 +45,8 @@ const sessionConfig = {
   },
 };
 app.use(session(sessionConfig));
-app.use(userName);
-app.use(sessionLogger);
+// app.use(userName);
+// app.use(sessionLogger);
 
 app.use('/', mainRouter);
 app.use('/registration', registrationRouter);
@@ -52,6 +54,8 @@ app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
 app.use('/upload', uploadRouter);
 app.use('/page', paginationRouter);
+app.use('/listing', listingRouter);
+
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
 });
