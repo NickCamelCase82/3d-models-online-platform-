@@ -36,13 +36,14 @@
 }
 
 .card-body a {
-  position: absolute;
-  bottom: 6%;
-  left: 6%;
+  /* position: absolute; */
+  /* bottom: 6%;
+  left: 6%; */
 }
 
 .card-text {
-  margin-bottom: 50px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .mainHeader {
@@ -82,4 +83,8 @@ footer {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.price {
+
 }
