@@ -1,3 +1,4 @@
+<script src="./js/paganation.js"></script>
 <link rel="stylesheet" href="../style/main.css">
 
 <div class="mainHeader">
@@ -19,13 +20,13 @@
   <div class="row my-5">
     <div class="col">
       <div id="allCards">
-        {{#each targetListings}}
+        {{#each currNote}}
         <div class="card" style="width: 18rem;">
           <img class="modelImg" src="{{this.modelImage}}" class="card-img-top" alt="3d mdel">
           <div class="card-body">
             <h5 class="card-title">{{this.name}}</h5>
             <p class="card-text">{{this.description}}</p>
-            <br/>
+            <br />
             <h4 class="price">{{this.price}} $</h4>
             <a href="#"><button class="btn btn-secondary">BUY NOW</button></a>
           </div>
@@ -33,6 +34,13 @@
         {{/each}}
       </div>
     </div>
+    <div class="pagination">
+      {{#each btnArr}}
+      <a class="paginationLink" href="{{this.href}}">{{this.name}}</a>
+      <br/>
+      {{/each}}
+    </div>
+
   </div>
 </div>
 

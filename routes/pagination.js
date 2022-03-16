@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { Listing } = require('../db/models');
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const allCards = await Listing.findAll({ order: [['createdAt', 'DESC']], raw: true });
   const notesOnPage = 8;
-  const pageNum = 1;
+  const pageNum = req.params.id;
   const start = (pageNum - 1) * notesOnPage;
   const end = start + notesOnPage;
   const currNote = allCards.slice(start, end);
