@@ -12,6 +12,7 @@ const mainRouter = require('./routes/main');
 const registrationRouter = require('./routes/registration');
 const logoutRouter = require('./routes/logout');
 const loginRouter = require('./routes/login');
+const uploadRouter = require('./routes/upload');
 
 // Импортируем созданный в отдельный файлах рутеры.
 const app = express();
@@ -48,6 +49,7 @@ app.use('/', mainRouter);
 app.use('/registration', registrationRouter);
 app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
+app.use('/upload', uploadRouter)
 
 
 app.listen(PORT, () => {
