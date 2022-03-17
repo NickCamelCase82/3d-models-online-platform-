@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="../style/addEdit.css" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+<link rel="stylesheet" href="../style/myAccount.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 <div id="addEditMainDiv">
   <div class="row">
@@ -16,17 +14,25 @@
             class="circleSettings"
           ></span>Settings</a>
         <hr />
-        <a href="#" class="cabinetBtn"><span class="circle"></span>
-          User072635</a>
+        <a href="/myAccount/creator" class="cabinetBtn"><span class="circle"></span>
+          Become Creator</a>
         <a href="#" class="cabinetBtn"><span class="circle"></span>
           Become Maker</a>
       </div>
     </div>
     <div class="col-sm-9">
       <div id="addEditSide">
-        <h3 class="mb-3">My Account</h3>
-        <h3></h3>
-        
+        {{#if user.isCreater}}
+        <a href="/upload">add listing</a><br>
+        {{/if}}
+        <hp class="mb-3 down">Downloads</hp>
+        <hr>
     </div>
   </div>
 </div>
+
+
+{{#each x}}
+<div>{{this}}</div>
+{{/each}}
+
