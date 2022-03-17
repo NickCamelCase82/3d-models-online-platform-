@@ -5,14 +5,16 @@
   <div class="col-md-7">
     <div id="leftSide">
       <div id="smallPics" class="listingPicDivs">
+        {{#each srcImg}}
+        <div class="smallPics"><img src="../{{this}}" alt="small 3d pic"></div>
+        {{/each}}
+        {{!-- <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
         <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
         <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
-        <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
-        <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
-        <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
+        <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div> --}}
       </div>
       <div id="bigPic" class="listingPicDivs">
-        <div ><img src="../image/2906292241.jpg" alt="big 3d pic" id="bigPicImg"></div>
+        <div><img src="../{{srcImgZero}}" alt="big 3d pic" id="bigPicImg"></div>
       </div>
     </div>
   </div>
@@ -21,8 +23,8 @@
       <div class="row">
         <div class="col-md-12">
           <div id="rightSide">
-            <p id="modelName">Name</p>
-            <p id="modelPrice">US$ 19.99</p>
+            <p id="modelName">{{name}}</p>
+            <p id="modelPrice">US$ {{price}}</p>
           </div>
         </div>
       </div>
@@ -77,18 +79,17 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <button id="listingAddButton" type="button" class="btn">ADD TO BASCKET</button>
+          <button id="listingAddButton" type="button" class="btn">ADD TO BASKET</button>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
           <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">DESCRIPTION</label>
+            <label for="floatingTextarea">{{description}}</label>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
