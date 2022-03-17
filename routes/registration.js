@@ -14,6 +14,7 @@ router.post('/new', async (req, res) => {
     const addUser = await User.create({ name, password: hashPassword, email });
     req.session.user = addUser.name;
     req.session.userId = addUser.id;
+    req.session.basket = [];
 
     if (!addUser.name || !addUser.password || !addUser.email) return res.sendStatus(400);
 

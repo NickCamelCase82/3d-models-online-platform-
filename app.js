@@ -8,6 +8,7 @@ const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 const path = require("path");
 
+
 const hbs = require("hbs");
 const { sessionLogger, userName } = require("./middleware/sessionLogger");
 const mainRouter = require("./routes/main");
@@ -17,7 +18,9 @@ const loginRouter = require("./routes/login");
 const uploadRouter = require("./routes/upload");
 const paginationRouter = require("./routes/pagination");
 const listingRouter = require("./routes/listing");
+const basketRouter = require('./routes/basket');
 const myAccountRouter = require("./routes/myAccount");
+
 
 // Импортируем созданный в отдельный файлах рутеры.
 const app = express();
@@ -49,6 +52,7 @@ app.use(session(sessionConfig));
 app.use(userName);
 // app.use(sessionLogger);
 
+
 app.use("/", mainRouter);
 app.use("/registration", registrationRouter);
 app.use("/logout", logoutRouter);
@@ -56,7 +60,9 @@ app.use("/login", loginRouter);
 app.use("/upload", uploadRouter);
 app.use("/page", paginationRouter);
 app.use("/listing", listingRouter);
+app.use('/basket', basketRouter);
 app.use("/myAccount", myAccountRouter);
+
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

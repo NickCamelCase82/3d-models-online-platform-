@@ -8,10 +8,6 @@
         {{#each srcImg}}
         <div class="smallPics"><img src="../{{this}}" alt="small 3d pic"></div>
         {{/each}}
-        {{!-- <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
-        <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
-        <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div>
-        <div class="smallPics"><img src="../image/2906292241.jpg" alt="small 3d pic"></div> --}}
       </div>
       <div id="bigPic" class="listingPicDivs">
         <div><img src="../{{srcImgZero}}" alt="big 3d pic" id="bigPicImg"></div>
@@ -79,7 +75,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <button id="listingAddButton" type="button" class="btn">ADD TO BASKET</button>
+          <button data-id="{{id}}" id="listingAddButton" type="button" class="btn">ADD TO BASKET</button>
         </div>
       </div>
       <div class="row">
