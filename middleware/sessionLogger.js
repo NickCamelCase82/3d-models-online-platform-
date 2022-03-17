@@ -8,4 +8,4 @@ const sessionLogger = (req, res, next) => {
   next();
 };
 
-module.exports = {userName, sessionLogger};
+module.exports = { userName, sessionLogger };

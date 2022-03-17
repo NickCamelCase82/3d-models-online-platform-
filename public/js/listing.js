@@ -7,8 +7,3 @@ smallPics.addEventListener('mouseover', (event) => {
     bigPicImg.src = rrc;
   }
 });
-smallPics.addEventListener('mouseout', (event) => {
-  if (event.target.tagName === 'IMG') {
-    bigPicImg.src = '../image/2.png';
-  }
-});
