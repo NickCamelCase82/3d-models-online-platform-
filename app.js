@@ -45,7 +45,7 @@ const sessionConfig = {
   },
 };
 app.use(session(sessionConfig));
-// app.use(userName);
+app.use(userName);
 // app.use(sessionLogger);
 
 app.use('/', mainRouter);
