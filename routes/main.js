@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
   const pageNum = 1;
   const start = (pageNum - 1) * notesOnPage;
   const end = start + notesOnPage;
-  allCards.map((elem) => elem.modelImage = elem.modelImage.split(', ')[0]);
   const currNote = allCards.slice(start, end);
 
   const arrLength = Math.ceil(allCards.length / notesOnPage);
