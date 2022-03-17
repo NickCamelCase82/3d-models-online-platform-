@@ -1,16 +1,16 @@
 <link rel="stylesheet" href="../style/bascket.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <div id="bascketMain">
-  
+
   <div class="row">
     <div class="col-md-6">
-      {{!-- {{#each}} --}}
+      {{#each itemsArr}}
       <div class="forOneModel">
         <div class="row">
           <div class="col-sm-5">
             <div class="bascketImg">
-              <img src="../image/2906292241.jpg" alt="model img">
+              <img src="../{{srcImgZero}}" alt="model img">
             </div>
           </div>
           <div class="col-sm-5">
@@ -18,7 +18,7 @@
               <div class="col-sm-10">
                 <div class="row">
                   <div class="col">
-                    <p class="nameBascket">Name</h4>
+                    <p class="nameBascket">{{name}}</h4>
                     <p class="bascketOptions">Option 1: Mounted</p>
                     <p class="bascketOptions">Option 2: Scale 32</p>
                     <p class="bascketOptions"><a href="#" class="editor">Edit</a></p>
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="col-sm-2">
-            <p class="bascketPrice">$19.99</h4>
+            <p class="bascketPrice">${{price}}</h4>
           </div>
         </div>
         <div class="row">
@@ -47,16 +47,17 @@
             <div>
               <div class="form-floating">
                 {{!-- poloji v konce id idishnik tovara dlya kajdogo textarea i label --}}
-                <textarea class="form-control txtArea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <textarea class="form-control txtArea" placeholder="Leave a comment here"
+                  id="floatingTextarea"></textarea>
                 <label for="floatingTextarea" class="basckettextareaLabel">Add a note</label>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {{!-- {{/each}} --}}
+      {{/each}}
     </div>
-    
+
     <div class="col-md-6">
       <div class="bascketRside">
         <div class="payDiv">

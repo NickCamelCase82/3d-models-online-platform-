@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
     if (passwordCheck) {
       req.session.user = loginUser.name;
       req.session.userId = loginUser.id;
+      req.session.basket = [];
       res.redirect('/');
     }
   } catch (err) {

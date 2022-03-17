@@ -17,6 +17,7 @@ const loginRouter = require('./routes/login');
 const uploadRouter = require('./routes/upload');
 const paginationRouter = require('./routes/pagination');
 const listingRouter = require('./routes/listing');
+const basketRouter = require('./routes/basket');
 
 // Импортируем созданный в отдельный файлах рутеры.
 const app = express();
@@ -55,6 +56,7 @@ app.use('/login', loginRouter);
 app.use('/upload', uploadRouter);
 app.use('/page', paginationRouter);
 app.use('/listing', listingRouter);
+app.use('/basket', basketRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
