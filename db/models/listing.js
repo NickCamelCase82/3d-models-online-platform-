@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     sku: DataTypes.STRING,
     modelLink: DataTypes.STRING,
     modelImage: DataTypes.STRING,
+    mainImage: DataTypes.STRING,
     user_id: DataTypes.INTEGER,
     downloadCount: DataTypes.INTEGER
   }, {

@@ -26,6 +26,9 @@ module.exports = {
       modelImage: {
         type: Sequelize.STRING
       },
+      mainImage: {
+        type: Sequelize.STRING
+      },
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,

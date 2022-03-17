@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
   for (let i = 0; i < arrLength; i++) {
     btnArr.push({ href: `/page/${i + 1}`, name: i + 1 });
   }
+
   res.render('entries/main', { currNote, btnArr });
 });
 
