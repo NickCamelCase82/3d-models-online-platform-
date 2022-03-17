@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../style/addEdit.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+<form action="/upload" method="post" enctype="multipart/form-data">
 <div id="addEditMainDiv">
 <div class="row">
   <div class="col-sm-3">
@@ -15,40 +16,28 @@
   </div>
   <div class="col-sm-9">
     <div id="addEditSide">
-      <h3 class="mb-3">Yellow Lemon Tank</h3>
+      <h3 class="mb-3">Add Listing</h3>
       <h4>Photos</h4>
       <div id="addPictures">
-        <div class="addPics">
-          <img src="../image/2906292241.jpg" alt="models">
-        </div>
-        <div class="addPics">
-          <img src="../image/2906292241.jpg" alt="models">
-        </div>
-        <div class="addPics">
-          <img src="../image/2906292241.jpg" alt="models">
-        </div>
-        <div class="addPics">
-          <img src="../image/2906292241.jpg" alt="models">
-        </div>
-        <div class="addPics">
-          <img src="../image/2906292241.jpg" alt="models">
-        </div>
+        <input type="file" name="Photo-1" multiple/>
       </div>
+      {{!-- <form action="/upload/files" method="post" enctype="multipart/form-data"> --}}
       <h4>Files</h4>
-      <div class="row mb-2">
+      {{!-- <div class="row mb-2">
         <div class="col-sm-2"><span class="filedatasTitles">Unsupported</span></div>
-        <div class="col-sm-6"><input type="file" name="*" class="form-control"/></div>
+        <div class="col-sm-6"><input type="file" name="Photo-1" class="form-control"/></div>
         <div class="col-sm-4"></div>
-      </div>
+      </div> --}}
       <div class="row mb-2">
         <div class="col-sm-2"><span class="filedatasTitles">Supported</span></div>
-        <div class="col-sm-6"><input type="file" name="*" / class="form-control"></div>
+        <div class="col-sm-6"><input type="file" name="Photo-1" class="form-control"></div>
         <div class="col-sm-4"></div>
       </div>
+      {{!-- </form> --}}
       <h4>Listing Details</h4>
       <div class="row mb-2">
         <div class="col-sm-2"><span class="filedatasTitles">Title</span></div>
-        <div class="col-sm-6"><input type="text" name="*" class="form-control"/></div>
+        <div class="col-sm-6"><input type="text" name="name" class="form-control"/></div>
         <div class="col-sm-4"></div>
       </div>
       <div class="row mb-2">
@@ -67,7 +56,16 @@
         <div class="col-sm-2"><span class="filedatasTitles">Description</span></div>
         <div class="col-sm-6">
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatTextarea"></textarea>
+            <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatTextarea"></textarea>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-sm-2"><span class="filedatasTitles">Price</span></div>
+        <div class="col-sm-6">
+          <div class="form-floating">
+            <input name="price" type="number"/>
           </div>
         </div>
         <div class="col-sm-4"></div>
@@ -84,7 +82,7 @@
       </div>
       <div class="row my-4">
         <div class="col-sm-4 mb-2">
-          <a href="#" class="btn" id="addSaveBtn">SAVE</a>
+          <button type="submit" class="btn" id="addSaveBtn">SAVE</button>
         </div>
         <div class="col-sm-4">
           <a href="#" class="btn" id="addDelBtn">DELETE</a>
@@ -94,4 +92,5 @@
     </div>
   </div>
 </div>
-</div>
+</div>    
+</form>
