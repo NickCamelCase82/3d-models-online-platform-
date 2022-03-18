@@ -65,6 +65,7 @@
 }
 
 .saveOrRemove:hover {
+  cursor: pointer;
   color: #2D3748;
 }
 

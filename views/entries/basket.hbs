@@ -1,3 +1,4 @@
+<script defer src="../js/bascket.js"></script>
 <link rel="stylesheet" href="../style/bascket.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -6,7 +7,7 @@
   <div class="row">
     <div class="col-md-6">
       {{#each itemsArr}}
-      <div class="forOneModel">
+      <div class="forOneModel" id="forOneModel{{id}}">
         <div class="row">
           <div class="col-sm-5">
             <div class="bascketImg">
@@ -29,7 +30,8 @@
                     <a href="#" class="saveOrRemove">Save for later</a>
                   </div>
                   <div class="col-sm-6">
-                    <a href="/basket/delete/{{id}}" class="saveOrRemove">Remove</a>
+                    {{!-- <a href="/basket/delete/{{id}}" class="saveOrRemove">Remove</a> --}}
+                    <a data-id="{{id}}" class="saveOrRemove">Remove</a>
                   </div>
                 </div>
               </div>
