@@ -3,7 +3,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <div id="bascketMain">
-
+<div class="row">
+  <div class="col-sm-12 navFlexDiv">
+    <div class="homeBtn">
+      <a href="/" class="btn btn-outline-light">Home</a>
+    </div>
+    <div class="iconBag">
+    <a href="/myAccount"><i class="fa-regular fa-user fa-2xl icons"></i></a>
+    <a href="#"><i class="fa-regular fa-heart fa-2xl icons"></i></a>
+    <a href="/basket"><i class="fa-solid fa-basket-shopping fa-2xl icons"></i></a>
+  </div>
+  </div>
+</div>
   <div class="row">
     <div class="col-md-6">
       {{#each itemsArr}}
@@ -89,9 +100,9 @@
             </div>
           </div>
           <div class="row">
-            <div class="col">
+            <div class="col-sm-12">
               <div class="checkoutBtn">
-                <a href="basket/proceed"<button type="button">PROCEED TO CHECKOUT</button>
+                <a href="basket/proceed">PROCEED TO CHECKOUT</a>
               </div>
             </div>
           </div>

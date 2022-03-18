@@ -1,9 +1,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap');
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #E5E5E5;
+}
+
 #addEditMainDiv {
   background: #E5E5E5;
   font-family: 'Ubuntu', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 #cabinetSide {
@@ -145,6 +157,26 @@ h4 {
 
 #floatTextarea {
   height: 200px;
+}
+
+.icons {
+  color: white;
+  margin-left: 15px;
+}
+
+.navFlexDiv {
+  padding: 10px 50px;
+  background: linear-gradient(230.95deg, #4B6CB7 -0.37%, #182848 100%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.homeBtn a {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media screen and (max-width: 900px) {

@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap');
 
-* {
-  font-family: 'Ubuntu', sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #E5E5E5;
 }
 
 .allborders {
@@ -112,6 +116,26 @@ line-height: 80%;
 .form-floating label {
   color: #000;
   font-weight: bold;
+}
+
+.icons {
+  color: white;
+  margin-left: 15px;
+}
+
+.navFlexDiv {
+  padding: 10px 50px;
+  background: linear-gradient(230.95deg, #4B6CB7 -0.37%, #182848 100%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.homeBtn a {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media screen and (max-width: 900px) {
