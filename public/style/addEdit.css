@@ -114,7 +114,7 @@ h4 {
 }
 
 #addSaveBtn, #addDelBtn {
-  display: block;
+  width: 100%;
   color: white;
   font-weight: bold;
   padding: 10px 0px;

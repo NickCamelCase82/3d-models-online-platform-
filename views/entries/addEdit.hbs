@@ -18,8 +18,13 @@
     <div id="addEditSide">
       <h3 class="mb-3">Add Listing</h3>
       <h4>Photos</h4>
-      <div id="addPictures">
-        <input type="file" name="Photo-1" multiple/>
+      <div class="row">
+        <div class="col-sm-8">
+          <div id="addPictures">
+            <input type="file" class="form-control" name="Photo-1" multiple/>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
       </div>
       {{!-- <form action="/upload/files" method="post" enctype="multipart/form-data"> --}}
       <h4>Files</h4>
@@ -64,8 +69,8 @@
       <div class="row mb-2">
         <div class="col-sm-2"><span class="filedatasTitles">Price</span></div>
         <div class="col-sm-6">
-          <div class="form-floating">
-            <input name="price" type="number"/>
+          <div class="input-group">
+            <input name="price" type="number" class="form-control"/>
           </div>
         </div>
         <div class="col-sm-4"></div>
