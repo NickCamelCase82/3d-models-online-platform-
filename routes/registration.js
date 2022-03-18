@@ -1,13 +1,13 @@
-const router = require('express').Router();
-const bcrypt = require('bcrypt');
-const { User } = require('../db/models');
-const nodeMailer = require('../nodeMailer');
+const router = require("express").Router();
+const bcrypt = require("bcrypt");
+const { User } = require("../db/models");
+const nodeMailer = require("../nodeMailer");
 
-router.get('/', (req, res) => {
-  res.render('entries/registrationForm');
+router.get("/", (req, res) => {
+  res.render("entries/registrationForm");
 });
 
-router.post('/new', async (req, res) => {
+router.post("/new", async (req, res) => {
   try {
     const { name, password, email } = req.body;
     const hashPassword = await bcrypt.hash(password, 5);
@@ -16,20 +16,25 @@ router.post('/new', async (req, res) => {
     req.session.userId = addUser.id;
     req.session.basket = [];
 
-    if (!addUser.name || !addUser.password || !addUser.email) return res.sendStatus(400);
+    if (!addUser.name || !addUser.password || !addUser.email)
+      return res.sendStatus(400);
 
     const message = {
       to: addUser.email,
-      subject: 'Congratulations! You are successfully registred on our site',
+      subject: "Registration credentials",
       html: `
-      <h2>Поздравляем, Вы успешно зарегистрировались на нашем сайте!</h2>
+      <h2>Thank you for your recent registration with Galactic Miniatures!</h2>
       
-      <i>данные вашей учетной записи:</i>
       <ul>
-          <li>login: ${addUser.name}</li>
-          <li>password: ${password}</li>
+          <li>Your login: ${addUser.name}</li>
+          <li>Your password: ${password}</li>
       </ul>
-      <p>Данное письмо не требует ответа.<p>`,
+      
+      <p>We kindly remind you to keep this information confidential.</p>
+
+      <p>Once again we would like to thank you for doing business with us and to extend our best wishes.</p>
+
+      <p>Galactic Miniatures Team.</p>`,
     };
 
     nodeMailer(message);
