@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
   }
 
   res.render('entries/main', { currNote, btnArr });
-
 });
 
 module.exports = router;

@@ -16,9 +16,9 @@ router.get('/', async (req, res) => {
 
     itemsArr.push(item);
   }
+  const priceSum = itemsArr.reduce((acc, curr) => acc + curr.price, 0);
 
-  console.log(itemsArr);
-  res.render('entries/basket', { itemsArr });
+  res.render('entries/basket', { itemsArr, priceSum });
 });
 
 router.delete('/delete/:id', async (req, res) => {
