@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Listing } = require('../db/models');
+const { create } = require('hbs');
+const { Listing, Order } = require('../db/models');
 
 router.get('/', async (req, res) => {
   const basketId = req.session.basket;
@@ -33,5 +34,13 @@ router.delete('/delete/:id', async (req, res) => {
     res.json(err);
   }
 });
+
+router.get('/proceed', (req, res) => {
+  const arr = req.session.basket
+  const newArr = arr.forEach(async (e) => {
+    const oreder = Order.create({userId: req.session.userId, listingId: e})
+  })
+  res.redirect('/myAccount/')
+})
 
 module.exports = router;
