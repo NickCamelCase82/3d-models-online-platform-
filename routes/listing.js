@@ -10,7 +10,6 @@ router.get('/:id', async (req, res) => {
   const srcImgZero = srcImg[0];
   currListing.srcImg = srcImg;
   currListing.srcImgZero = srcImgZero;
-
   res.render('entries/listing', currListing);
 });
 

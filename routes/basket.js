@@ -16,19 +16,17 @@ router.get('/', async (req, res) => {
 
     itemsArr.push(item);
   }
+  const priceSum = itemsArr.reduce((acc, curr) => acc + curr.price, 0);
 
-  console.log(itemsArr);
-  res.render('entries/basket', { itemsArr });
+  res.render('entries/basket', { itemsArr, priceSum });
 });
 
 router.get('/delete/:id', async (req, res) => {
-  const basketId = req.session.basket
-  const index = basketId.indexOf(req.params.id)
-  const newBasket = basketId.splice(index, 1)
-  console.log(newBasket);
-  console.log(req.session.basket);
+  const basketId = req.session.basket;
+  const index = basketId.indexOf(req.params.id);
+  const newBasket = basketId.splice(index, 1);
 
-  res.redirect('/basket')
-})
+  res.redirect('/basket');
+});
 
 module.exports = router;
