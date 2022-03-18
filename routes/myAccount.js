@@ -1,29 +1,48 @@
+/* eslint-disable max-len */
 const router = require('express').Router();
 
-const { User } = require('../db/models');
-const { Listing } = require('../db/models');
+const { User, Listing, Order } = require('../db/models');
 
 router.get('/', async (req, res) => {
   const id = req.session.userId;
   const user = await User.findOne({ where: { id }, raw: true });
-  let basket = req.session.basket
+  const { basket } = req.session;
 
-  const newArr = []
+  const newArr = [];
   for (let i = 0; i < basket.length; i++) {
-    const download = await Listing.findOne({ where: { id: basket[i] } , raw: true });
-    newArr.push(download)
+    const download = await Listing.findOne({ where: { id: basket[i] }, raw: true });
+    newArr.push(download);
   }
-  
-  console.log(newArr);
-  
+
   res.render('./entries/myAccount', { user, newArr });
 });
 
 router.get('/creator', async (req, res) => {
   const id = req.session.userId;
   await User.update({ isCreater: true }, { where: { id } });
-  const user = await User.findOne({ where: { id } });
-  res.render('./entries/myAccount', { user });
+  res.redirect('/myAccount/downloads');
+});
+
+router.get('/downloads', async (req, res) => {
+  let allBuysId = await Order.findAll({ where: { userId: req.session.userId }, attributes: ['listingId'], raw: true });
+  allBuysId = allBuysId.map((elem) => elem.listingId);
+  const allBuysArr = [];
+  for (let i = 0; i < allBuysId.length; i++) {
+    const oneBuys = await Listing.findOne({ where: { id: allBuysId[i] }, raw: true });
+    allBuysArr.push(oneBuys);
+  }
+  const id = req.session.userId;
+  const user = await User.findOne({ where: { id }, raw: true });
+  console.log(allBuysArr);
+  res.render('entries/DownloadsList', { allBuysArr, user });
+});
+
+router.get('/listings', async (req, res) => {
+  const id = req.session.userId;
+  const user = await User.findOne({ where: { id }, raw: true });
+  const allListings = await Listing.findAll({ where: { user_id: req.session.userId }, raw: true });
+  console.log(allListings);
+  res.render('entries/ListingsList', { allListings, user });
 });
 
 module.exports = router;
