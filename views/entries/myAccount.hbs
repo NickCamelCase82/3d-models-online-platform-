@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-sm-3">
       <div id="cabinetSide">
-        <a href="#" class="cabinetBtn"><span class="circle"></span> Creator</a>
+        <a href="#" class="cabinetBtn"><span class="circle"></span>{{user.name}}</a>
         <a href="#" class="cabinetBtn"><span
             class="circleListing"
           ></span>Listings</a>
@@ -32,7 +32,7 @@
 </div>
 
 
-{{#each x}}
-<div>{{this}}</div>
+{{#each newArr}}
+<div><img src="{{this.mainImage}}"></div>
 {{/each}}
 
