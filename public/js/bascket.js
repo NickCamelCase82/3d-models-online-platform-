@@ -1,5 +1,4 @@
 const bascketMain = document.getElementById('bascketMain');
-console.log(bascketMain);
 
 bascketMain.addEventListener('click', async (ev) => {
   if (ev.target.tagName === 'A' && ev.target.innerText === 'Remove') {
@@ -16,6 +15,12 @@ bascketMain.addEventListener('click', async (ev) => {
       });
       if (response.status === 200) {
         const oneModel = document.getElementById(`forOneModel${id}`);
+        const priceModel = oneModel.querySelector('.bascketPrice');
+        const totalPrice = document.querySelectorAll('.itemsTot')[1];
+        const priceModelString = priceModel.textContent.replace(/[^0-9]/g, '');
+        const totalPriceString = totalPrice.textContent.replace(/[^0-9]/g, '');
+        const currPrice = Number(totalPriceString) - Number(priceModelString);
+        totalPrice.innerHTML = currPrice;
         oneModel.remove();
       } else {
         alert('ERROR');
