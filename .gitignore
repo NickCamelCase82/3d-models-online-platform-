@@ -131,4 +131,4 @@ dist
 
 public/uploads
 
-session/
+.session/
