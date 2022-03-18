@@ -4,6 +4,14 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #E5E5E5;
+}
+
 .bord {
   border: 1px solid black;
 }
@@ -163,7 +171,7 @@
   padding: 0px 60px;
 }
 
-.checkoutBtn button {
+.checkoutBtn a {
   color: #FFFFFF;
   width: 100%;
   font-family: 'Ubuntu';
@@ -175,9 +183,32 @@
   border-radius: 12px;
   border: none;
   padding: 18.5px 0px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
 }
 
-.checkoutBtn button:hover {
+.checkoutBtn a:hover {
   animation: pulse 1s;
+}
+
+.icons {
+  color: white;
+  margin-left: 15px;
+}
+
+.navFlexDiv {
+  padding: 10px 50px;
+  background: linear-gradient(230.95deg, #4B6CB7 -0.37%, #182848 100%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.homeBtn a {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
