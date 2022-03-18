@@ -21,4 +21,14 @@ router.get('/', async (req, res) => {
   res.render('entries/basket', { itemsArr });
 });
 
+router.get('/delete/:id', async (req, res) => {
+  const basketId = req.session.basket
+  const index = basketId.indexOf(req.params.id)
+  const newBasket = basketId.splice(index, 1)
+  console.log(newBasket);
+  console.log(req.session.basket);
+
+  res.redirect('/basket')
+})
+
 module.exports = router;
